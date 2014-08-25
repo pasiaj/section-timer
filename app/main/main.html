@@ -1,0 +1,20 @@
+<ol class="allItems">
+    <li class="item" ng-repeat="item in items" ng-class="(item==current) ? 'current' : ''"
+ ng-click="select(item)">
+    	<div class="name">{{item.name}}</div>
+        <div class="duration">{{item.duration}}</div>
+        <div class="startTime">{{item.startTime}}</div>
+    </li>
+
+</ol>
+
+<div class="controls">
+	<button ng-class="(playing==true) ? 'playing' : 'stopped'" ng-click="startStop()"></button>
+
+	<div class="edit">
+		<input  ng-blur="saveEdit()" ng-model="current.name" type="text" name="name" />
+	    <input  ng-blur="saveEdit()" ng-model="current.duration" type="number" />
+	</div>
+</div>
+
+<div class="big current"></div>

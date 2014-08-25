@@ -1,0 +1,99 @@
+body {
+    font-family: Helvetica;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.controls {
+	z-index: 5;
+	height: 58px;
+	bottom: 0;
+	width: 100%;
+	position: absolute;
+}
+
+button {
+	line-height: 48px;
+	height: 48px;
+	width: 48px;
+}
+button.playing:before {
+	content: 'Stop';
+}
+button.stopped:before {
+	content: 'Start';
+}
+
+.edit {
+    position: absolute;
+    right: 5px;
+    top: 0;
+}
+
+.allItems {
+	z-index: 10;
+    position: absolute;
+    top: 0;
+    bottom: 58px;
+    left: 0;
+    right: 0;
+}
+.big {
+	z-index: 1;
+    position: absolute;
+    height: 100%;
+    max-height: 0%;
+    background: rgba(0, 0, 0, 0.3);
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.allItems {
+	margin: 0;
+	padding: 0;
+	overflow: scroll;
+}
+
+.item {
+    padding: 3px;
+}
+
+.item.default {
+}
+
+.item.current {
+}
+
+.item .name {
+    font-size: 12px;
+    text-align: center;
+}
+
+.item.current .name {
+	font-weight: bold;
+}
+
+
+.item .duration {
+    font-size: 10px;
+    text-align: center;
+}
+
+.item .startTime {
+    font-size: 10px;
+    display: none;
+}
+
+.item:after {
+    clear: both;
+}
