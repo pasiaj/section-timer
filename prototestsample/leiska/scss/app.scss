@@ -17,13 +17,13 @@
 
 $btnHeight: 64px;
 
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
 }
-
 body {
   font-family: 'futura-pt', 'Futura', sans-serif;
   font-weight: 400;
@@ -43,11 +43,14 @@ p, ul, ol, pre, table, blockquote {
   padding: 0;
   margin: 0;
 }
-img {
-  display: inline-block;
-  vertical-align: middle;
+img,
+svg {
   max-width: 100%;
   height: auto;
+}
+button svg g,
+button svg path {
+  fill: currentColor;
 }
 
 input,
@@ -60,23 +63,42 @@ textarea {
   line-height: inherit;
   -webkit-font-smoothing: inherit;
   margin: 0;
-  padding: .25em 1em;
+  padding: .25em .5em;
   color: inherit;
   background: none;
   border: none;
 }
+input[type=text],
+input[type=number],
+textarea {
+  margin: .25em .25em;
+  color: dark(1);
+  background: white(.9);
+  border: 1px solid black(.17);
+}
+input:focus {
+  outline: 2px solid dark(1);
+  outline-offset: -2px;
+  background: white(1);
+}
+
 button {
   text-align: center;
   cursor: pointer;
 }
-:focus {
-  outline: 2px solid white;
+button:hover {
+  color: orange(1);
+}
+button:focus {
+  outline: 1px solid dark(1);
   outline-offset: -5px;
 }
+
 
 .hide {
   display: none;
 }
+
 
 .layout {
   position: absolute;
@@ -85,6 +107,8 @@ button {
   right: 0;
   bottom: 0;
 }
+
+
 .items {
   position: absolute;
   top: 0;
@@ -104,23 +128,54 @@ button {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  align-items: stretch;
+  align-items: center;
   flex-grow: 1;
   flex-shrink: 0;
-  border-bottom: 1px solid dark(.2);
+  padding: .25em;
+  //border-bottom: 1px solid dark(.2);
+}
+.item .sort:hover {
+  color: dark(.6);
+  cursor: grab;
 }
 .selected {
+  color: white(1);
   background: #ffa01b;
   background: orange(1);
 }
+.sorting {
+  box-shadow:
+    0px 4px 14px 0px black(.3),
+    0px 1px 3px 0px black(.1),
+    inset 0px -1px 0px 0px black(.2);
+  background: orange(.7);
+}
+.sorting,
+.sorting .sort:hover {
+  cursor: grabbing;
+}
 .name {
   flex-grow: 1;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  cursor: pointer;
+}
+.name:focus {
+  cursor: auto;
 }
 .duration {
+  flex-basis: 5em;
+  width: 5em;
   flex-grow: 0;
-  flex-shrink: 1;
+  flex-shrink: 0;
+  cursor: pointer;
 }
+.duration:focus {
+  cursor: auto;
+}
+.sort {
+  color: dark(.33);
+}
+
 
 .controls {
   display: flex;
@@ -129,13 +184,18 @@ button {
   justify-content: flex-start;
   align-items: stretch;
   position: absolute;
+  z-index: 800;
   top: auto;
   left: 0;
   right: 0;
   bottom: 0;
   height: $btnHeight;
-  color: light(1);
-  background: dark(1);
+  color: dark(1);
+  background: light(1);
+  box-shadow:
+    0px 14px 14px 14px black(.3),
+    0px 3px 3px 3px black(.1),
+    inset 0px 1px 0px 0px black(.3);
 }
 .controls button {
   font-weight: 600;
@@ -146,6 +206,10 @@ button {
   height: $btnHeight;
   min-width: $btnHeight;
 }
+.controls button svg {
+  display: inline-block;
+  vertical-align: middle;
+}
 .playback {
   flex-grow: 1;
 }
@@ -153,6 +217,7 @@ button {
 .remove {
   flex-grow: 1;
 }
+
 
 .timer {
   position: fixed;
@@ -174,10 +239,11 @@ button {
 }
 .remaining {
   position: fixed;
+  z-index: 100;
   top: 0;
   left: auto;
   right: 0;
   bottom: 0;
   width: 100%;
-  background: dark(.3);
+  background: black(.5);
 }

@@ -21,11 +21,12 @@ p, ul, ol, pre, table, blockquote {
   padding: 0;
   margin: 0; }
 
-img {
-  display: inline-block;
-  vertical-align: middle;
+img, svg {
   max-width: 100%;
   height: auto; }
+
+button svg g, button svg path {
+  fill: currentColor; }
 
 input, button, select, textarea {
   font-family: inherit;
@@ -34,17 +35,31 @@ input, button, select, textarea {
   line-height: inherit;
   -webkit-font-smoothing: inherit;
   margin: 0;
-  padding: 0.25em 1em;
+  padding: 0.25em 0.5em;
   color: inherit;
   background: none;
   border: none; }
+
+input[type=text], input[type=number], textarea {
+  margin: 0.25em 0.25em;
+  color: #1a1a1b;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.17); }
+
+input:focus {
+  outline: 2px solid #1a1a1b;
+  outline-offset: -2px;
+  background: white; }
 
 button {
   text-align: center;
   cursor: pointer; }
 
-:focus {
-  outline: 2px solid white;
+button:hover {
+  color: #ffa01b; }
+
+button:focus {
+  outline: 1px solid #1a1a1b;
   outline-offset: -5px; }
 
 .hide {
@@ -103,10 +118,10 @@ button {
   -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-align: stretch;
-  -webkit-align-items: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
@@ -114,29 +129,61 @@ button {
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0;
-  border-bottom: 1px solid rgba(26, 26, 27, 0.2); }
+  padding: 0.25em; }
+
+.item .sort:hover {
+  color: rgba(26, 26, 27, 0.6);
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: grab; }
 
 .selected {
+  color: white;
   background: #ffa01b;
   background: #ffa01b; }
+
+.sorting {
+  -webkit-box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 0px rgba(0, 0, 0, 0.1), inset 0px -1px 0px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 0px rgba(0, 0, 0, 0.1), inset 0px -1px 0px 0px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 160, 27, 0.7); }
+
+.sorting, .sorting .sort:hover {
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: grabbing; }
 
 .name {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  -webkit-flex-shrink: 0;
-      -ms-flex-negative: 0;
-          flex-shrink: 0; }
+  -webkit-flex-shrink: 1;
+      -ms-flex-negative: 1;
+          flex-shrink: 1;
+  cursor: pointer; }
+
+.name:focus {
+  cursor: auto; }
 
 .duration {
+  -webkit-flex-basis: 5em;
+      -ms-flex-preferred-size: 5em;
+          flex-basis: 5em;
+  width: 5em;
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
       -ms-flex-positive: 0;
           flex-grow: 0;
-  -webkit-flex-shrink: 1;
-      -ms-flex-negative: 1;
-          flex-shrink: 1; }
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  cursor: pointer; }
+
+.duration:focus {
+  cursor: auto; }
+
+.sort {
+  color: rgba(26, 26, 27, 0.33); }
 
 .controls {
   display: -webkit-box;
@@ -160,13 +207,16 @@ button {
       -ms-flex-align: stretch;
           align-items: stretch;
   position: absolute;
+  z-index: 800;
   top: auto;
   left: 0;
   right: 0;
   bottom: 0;
   height: 64px;
-  color: #efefef;
-  background: #1a1a1b; }
+  color: #1a1a1b;
+  background: #efefef;
+  -webkit-box-shadow: 0px 14px 14px 14px rgba(0, 0, 0, 0.3), 0px 3px 3px 3px rgba(0, 0, 0, 0.1), inset 0px 1px 0px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 14px 14px 14px rgba(0, 0, 0, 0.3), 0px 3px 3px 3px rgba(0, 0, 0, 0.1), inset 0px 1px 0px 0px rgba(0, 0, 0, 0.3); }
 
 .controls button {
   font-weight: 600;
@@ -176,6 +226,10 @@ button {
   padding: 0;
   height: 64px;
   min-width: 64px; }
+
+.controls button svg {
+  display: inline-block;
+  vertical-align: middle; }
 
 .playback {
   -webkit-box-flex: 1;
@@ -208,9 +262,10 @@ button {
 
 .remaining {
   position: fixed;
+  z-index: 100;
   top: 0;
   left: auto;
   right: 0;
   bottom: 0;
   width: 100%;
-  background: rgba(26, 26, 27, 0.3); }
+  background: rgba(0, 0, 0, 0.5); }

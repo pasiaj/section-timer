@@ -5,8 +5,8 @@
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Artboard-1" sketch:type="MSArtboardGroup" transform="translate(-98.000000, -90.000000)" fill="#FFFFFF">
-            <path d="M107,105 L98,105 L98,99 L107,99 L107,90 L113,90 L113,99 L122,99 L122,105 L113,105 L113,114 L107,114 L107,105 L107,105 Z" id="plus" sketch:type="MSShapeGroup"></path>
+        <g id="Artboard-1" sketch:type="MSArtboardGroup" transform="translate(-208.000000, -92.000000)" fill="#000000">
+            <path d="M217,107 L208,107 L208,101 L217,101 L217,92 L223,92 L223,101 L232,101 L232,107 L223,107 L223,116 L217,116 L217,107 L217,107 Z" id="plus" sketch:type="MSShapeGroup"></path>
         </g>
     </g>
 </svg>

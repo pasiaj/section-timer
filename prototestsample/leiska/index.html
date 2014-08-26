@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1">
   <title>Apps by Workflower</title>
   <link rel="icon" href="workflower-icon.png">
   <link rel="stylesheet" href="css/app.css">
@@ -19,37 +20,52 @@
 
     <div class="items">
       <div class="item selected">
-        <input class="name" type="text" value="Miekkahyökkäys" autofocus>
+        <input class="name" type="text" value="Miekkahyökkäys">
         <input class="duration" type="number" min="0" step="0.25" max="99999" value="2">
+        <button class="sort">
+          <svg width="18px" height="15px" viewBox="0 0 18 15" version="1.1"><g transform="translate(-134.000000, -96.000000)" fill="#000000"><path d="M152,99 L152,96 L134,96 L134,99 L152,99 L152,99 Z M152,105 L152,102 L134,102 L134,105 L152,105 L152,105 Z M152,111 L152,108 L134,108 L134,111 L152,111 L152,111 Z"></path></g></svg>
+        </button>
       </div>
       <div class="item">
-        <input class="name" type="text" value="Taistelu">
+        <input class="name" type="text" value="Taistelu" autofocus>
         <input class="duration" type="number" min="0" step="0.25" max="99999" value="2.5">
+        <button class="sort">
+          <svg width="18px" height="15px" viewBox="0 0 18 15" version="1.1"><g transform="translate(-134.000000, -96.000000)" fill="#000000"><path d="M152,99 L152,96 L134,96 L134,99 L152,99 L152,99 Z M152,105 L152,102 L134,102 L134,105 L152,105 L152,105 Z M152,111 L152,108 L134,108 L134,111 L152,111 L152,111 Z"></path></g></svg>
+        </button>
       </div>
       <div class="item">
         <input class="name" type="text" value="Linnan valtaus">
         <input class="duration" type="number" min="0" step="0.25" max="99999" value="8">
+        <button class="sort">
+          <svg width="18px" height="15px" viewBox="0 0 18 15" version="1.1"><g transform="translate(-134.000000, -96.000000)" fill="#000000"><path d="M152,99 L152,96 L134,96 L134,99 L152,99 L152,99 Z M152,105 L152,102 L134,102 L134,105 L152,105 L152,105 Z M152,111 L152,108 L134,108 L134,111 L152,111 L152,111 Z"></path></g></svg>
+        </button>
       </div>
       <div class="item">
         <input class="name" type="text" value="Sankari pussaa prinsessaa">
         <input class="duration" type="number" min="0" step="0.25" max="99999" value="3">
+        <button class="sort">
+          <svg width="18px" height="15px" viewBox="0 0 18 15" version="1.1"><g transform="translate(-134.000000, -96.000000)" fill="#000000"><path d="M152,99 L152,96 L134,96 L134,99 L152,99 L152,99 Z M152,105 L152,102 L134,102 L134,105 L152,105 L152,105 Z M152,111 L152,108 L134,108 L134,111 L152,111 L152,111 Z"></path></g></svg>
+        </button>
       </div>
       <div class="item">
         <input class="name" type="text" value="Loppusilaus">
         <input class="duration" type="number" min="0" step="0.25" max="99999" value="5">
+        <button class="sort">
+          <svg width="18px" height="15px" viewBox="0 0 18 15" version="1.1"><g transform="translate(-134.000000, -96.000000)" fill="#000000"><path d="M152,99 L152,96 L134,96 L134,99 L152,99 L152,99 Z M152,105 L152,102 L134,102 L134,105 L152,105 L152,105 Z M152,111 L152,108 L134,108 L134,111 L152,111 L152,111 Z"></path></g></svg>
+        </button>
       </div>
     </div>
 
     <div class="controls">
       <button class="playback">
-        <img src="images/play.svg" alt="">
-        <img class="hide" src="images/pause.svg" alt="">
-      </button>
-      <button class="remove">
-        <img src="images/plus.svg" alt="">
+        <svg id="play-svg" width="22px" height="29px" viewBox="0 0 22 29" version="1.1"><g transform="translate(-169.000000, -88.000000)" fill="#FFFFFF"><path d="M169.085056,88.740104 L189.7448,101.78204 L169.085056,115.142072 L169.085056,88.740104 L169.085056,88.740104 Z"></path></g></svg>
+        <svg class="hide" id="pause-svg" width="18px" height="24px" viewBox="0 0 18 24" version="1.1"><g transform="translate(-136.000000, -90.000000)" fill="#FFFFFF"><path d="M147,90 L147,114 L154,114 L154,90 L147,90 L147,90 Z M136,90 L136,114 L143,114 L143,90 L136,90 L136,90 Z"></path></g></svg>
       </button>
       <button class="add">
-        <img src="images/minus.svg" alt="">
+        <svg id="plus-svg" width="24px" height="24px" viewBox="0 0 24 24" version="1.1"><g transform="translate(-98.000000, -90.000000)" fill="#FFFFFF"><path d="M107,105 L98,105 L98,99 L107,99 L107,90 L113,90 L113,99 L122,99 L122,105 L113,105 L113,114 L107,114 L107,105 L107,105 Z"></path></g></svg>
+      </button>
+      <button class="remove">
+        <svg id="minus-svg" width="22px" height="6px" viewBox="0 0 22 6" version="1.1"><g transform="translate(-64.000000, -99.000000)" fill="#FFFFFF"><path d="M86,105 L86,99 L64,99 L64,105 L86,105 Z"></path></g></svg>
       </button>
     </div>
 
