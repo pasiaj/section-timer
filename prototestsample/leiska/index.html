@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Apps by Workflower</title>
+  <link rel="icon" href="workflower-icon.png">
+  <link rel="stylesheet" href="css/app.css">
+
+  <script src="js/jquery-2.1.1.min.js"></script>
+  <script src="js/app.js"></script>
+
+  <script type="text/javascript" src="//use.typekit.net/nls5gpw.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+</head>
+<body>
+
+  <div class="layout">
+
+    <div class="items">
+      <div class="item selected">
+        <input class="name" type="text" value="Miekkahyökkäys" autofocus>
+        <input class="duration" type="number" min="0" step="0.25" max="99999" value="2">
+      </div>
+      <div class="item">
+        <input class="name" type="text" value="Taistelu">
+        <input class="duration" type="number" min="0" step="0.25" max="99999" value="2.5">
+      </div>
+      <div class="item">
+        <input class="name" type="text" value="Linnan valtaus">
+        <input class="duration" type="number" min="0" step="0.25" max="99999" value="8">
+      </div>
+      <div class="item">
+        <input class="name" type="text" value="Sankari pussaa prinsessaa">
+        <input class="duration" type="number" min="0" step="0.25" max="99999" value="3">
+      </div>
+      <div class="item">
+        <input class="name" type="text" value="Loppusilaus">
+        <input class="duration" type="number" min="0" step="0.25" max="99999" value="5">
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="playback">
+        <img src="images/play.svg" alt="">
+        <img class="hide" src="images/pause.svg" alt="">
+      </button>
+      <button class="remove">
+        <img src="images/plus.svg" alt="">
+      </button>
+      <button class="add">
+        <img src="images/minus.svg" alt="">
+      </button>
+    </div>
+
+  </div>
+
+  <div class="timer">
+    <div class="elapsed"></div>
+    <div class="remaining"></div>
+  </div>
+
+</body>
+</html>
