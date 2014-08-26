@@ -9,4 +9,16 @@ jQuery(document).ready(function($) {
     $(this).parent('.item').addClass('selected');
   });
 
+  $('.sort').on('mousedown', function(event) {
+    event.preventDefault();
+    $(':focus').blur();
+    $('.selected').removeClass('selected');
+    $(this).closest('.item').addClass('sorting selected');
+  });
+  $('.sort').on('mouseup', function(event) {
+    event.preventDefault();
+    $('.sorting').removeClass('sorting');
+  });
+
+
 });
