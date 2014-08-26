@@ -134,7 +134,7 @@ button:focus {
   padding: .25em;
   //border-bottom: 1px solid dark(.2);
 }
-.item button:hover {
+.item .sort:hover {
   color: dark(.6);
   cursor: grab;
 }
@@ -149,6 +149,10 @@ button:focus {
     0px 1px 3px 0px black(.1),
     inset 0px -1px 0px 0px black(.2);
   background: orange(.7);
+}
+.sorting,
+.sorting .sort:hover {
+  cursor: grabbing;
 }
 .name {
   flex-grow: 1;
